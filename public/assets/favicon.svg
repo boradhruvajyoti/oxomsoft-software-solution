@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <defs>
+    <linearGradient id="oxomGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#6366f1" />
+      <stop offset="100%" stop-color="#a855f7" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  
+  <!-- Dark Rounded Hexagon Background -->
+  <rect width="100" height="100" rx="24" fill="#090d16"/>
+  <rect width="98" height="98" x="1" y="1" rx="23" stroke="url(#oxomGrad)" stroke-width="2" fill="none" opacity="0.4"/>
+  
+  <!-- Stylized Geometric 'O' / Tech Prism Icon -->
+  <path d="M50 18 L78 34 L78 66 L50 82 L22 66 L22 34 Z" stroke="url(#oxomGrad)" stroke-width="5" fill="none" stroke-linejoin="round" filter="url(#glow)"/>
+  
+  <!-- Inner Dynamic Code Node & Matrix Cross -->
+  <circle cx="50" cy="50" r="8" fill="url(#oxomGrad)" />
+  <line x1="50" y1="18" x2="50" y2="42" stroke="#38bdf8" stroke-width="3" stroke-linecap="round"/>
+  <line x1="78" y1="66" x2="58" y2="54" stroke="#6366f1" stroke-width="3" stroke-linecap="round"/>
+  <line x1="22" y1="66" x2="42" y2="54" stroke="#a855f7" stroke-width="3" stroke-linecap="round"/>
+</svg>

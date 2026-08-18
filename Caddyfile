@@ -1,0 +1,67 @@
+# ==============================================================================
+# Caddyfile Configuration for Oxomsoft Software Solution
+# Domain: oxomsoft.in
+# Automatic TLS / HTTPS by Let's Encrypt
+# ==============================================================================
+
+# Redirect www to apex domain
+www.oxomsoft.in {
+    redir https://oxomsoft.in{uri} permanent
+}
+
+# Main Application Block
+oxomsoft.in {
+    # Automatic HTTPS with contact email for TLS expiry notifications
+    tls support@oxomsoft.com
+
+    # Enable HTTP/2 & HTTP/3, Zstandard & Gzip compression
+    encode zstd gzip
+
+    # Production Security Headers
+    header {
+        # Strict-Transport-Security (HSTS)
+        Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+        # Prevent MIME type sniffing
+        X-Content-Type-Options "nosniff"
+        # Clickjacking protection
+        X-Frame-Options "SAMEORIGIN"
+        # XSS filtering protection
+        X-XSS-Protection "1; mode=block"
+        # Referrer Policy
+        Referrer-Policy "strict-origin-when-cross-origin"
+        # Feature / Permissions Policy
+        Permissions-Policy "camera=(), microphone=(), geolocation=()"
+        # Remove Server identifier for security through obscurity
+        -Server
+    }
+
+    # Static Assets Caching (optional direct Caddy serving or reverse proxy passthrough)
+    @static {
+        path /css/* /js/* /assets/* /favicon.ico /robots.txt
+    }
+    header @static Cache-Control "public, max-age=86400, must-revalidate"
+
+    # Reverse Proxy to Node.js Clustered Application
+    reverse_proxy 127.0.0.1:3000 {
+        # Forward original IP and protocol headers
+        header_up Host {host}
+        header_up X-Real-IP {remote_host}
+        header_up X-Forwarded-For {remote_host}
+        header_up X-Forwarded-Proto {scheme}
+
+        # Health checks & load balancing buffer settings
+        health_uri /
+        health_interval 15s
+        health_timeout 5s
+    }
+
+    # Logging
+    log {
+        output file /var/log/caddy/oxomsoft_access.log {
+            roll_size 10mb
+            roll_keep 10
+            roll_keep_for 720h
+        }
+        format json
+    }
+}

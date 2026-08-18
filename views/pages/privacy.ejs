@@ -1,0 +1,136 @@
+<%- include('../partials/header') %>
+
+<!-- PRIVACY POLICY HERO -->
+<section class="relative py-16 bg-grid-pattern bg-radial-gradient border-b border-slate-800/80">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+    
+    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-500/10 border border-sky-500/30 text-xs font-mono text-sky-300 mb-6 reveal">
+      <i class="fa-solid fa-shield-halved text-xs"></i> LEGAL & COMPLIANCE
+    </div>
+
+    <h1 class="text-3xl sm:text-5xl font-extrabold font-['Outfit'] text-white tracking-tight mb-4 leading-tight reveal">
+      Privacy Policy
+    </h1>
+
+    <p class="text-sm text-slate-400 font-mono reveal">
+      Last Updated: January 2025 &bull; Effective for <%= company.domain %>
+    </p>
+
+  </div>
+</section>
+
+<!-- PRIVACY CONTENT -->
+<section class="py-16 bg-[#07090e]">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="glass-card rounded-3xl p-8 sm:p-12 border-slate-800 space-y-10 text-slate-300 text-sm sm:text-base leading-relaxed">
+      
+      <!-- 1. Introduction -->
+      <div class="space-y-4">
+        <h2 class="text-xl sm:text-2xl font-bold text-white font-['Outfit'] flex items-center gap-3">
+          <span class="text-sky-400 font-mono text-base">01.</span> Introduction
+        </h2>
+        <p>
+          Welcome to <strong><%= company.name %></strong> ("Oxomsoft", "we", "our", or "us"). We operate the website <a href="<%= company.url %>" class="text-sky-400 underline font-mono"><%= company.domain %></a> and provide software development, SaaS platform development, and mobile application engineering services.
+        </p>
+        <p>
+          This Privacy Policy describes how we collect, store, process, and safeguard personal and technical data when you visit our website, use our contact forms, or contract our engineering services.
+        </p>
+      </div>
+
+      <!-- 2. Information We Collect -->
+      <div class="space-y-4 pt-6 border-t border-slate-800/80">
+        <h2 class="text-xl sm:text-2xl font-bold text-white font-['Outfit'] flex items-center gap-3">
+          <span class="text-sky-400 font-mono text-base">02.</span> Information We Collect
+        </h2>
+        <p>We may collect information directly from you or automatically as you navigate our platform:</p>
+        <ul class="list-disc list-inside space-y-2 pl-2 text-slate-400 text-sm">
+          <li><strong class="text-slate-200">Voluntarily Provided Information:</strong> When you submit a project inquiry or contact request via our contact form, we collect your full name, email address, phone number (optional), subject/project interest, and project description.</li>
+          <li><strong class="text-slate-200">System Logs & Device Metadata:</strong> We automatically log technical information such as IP address, browser type, operating system version, referring URLs, and timestamps to protect against malicious bot attacks and maintain system integrity.</li>
+        </ul>
+      </div>
+
+      <!-- 3. Purpose of Processing -->
+      <div class="space-y-4 pt-6 border-t border-slate-800/80">
+        <h2 class="text-xl sm:text-2xl font-bold text-white font-['Outfit'] flex items-center gap-3">
+          <span class="text-sky-400 font-mono text-base">03.</span> How We Use Your Information
+        </h2>
+        <p>We process your data strictly for legitimate business and engineering purposes, including:</p>
+        <ul class="list-disc list-inside space-y-2 pl-2 text-slate-400 text-sm">
+          <li>Reviewing inquiries, providing architectural consultations, and preparing milestone proposals.</li>
+          <li>Communicating with you regarding project updates, milestones, and technical inquiries.</li>
+          <li>Ensuring website stability, detecting fraudulent traffic, and enforcing rate limits on our APIs.</li>
+          <li>Complying with applicable legal, tax, and regulatory requirements.</li>
+        </ul>
+      </div>
+
+      <!-- 4. Data Security & Storage -->
+      <div class="space-y-4 pt-6 border-t border-slate-800/80">
+        <h2 class="text-xl sm:text-2xl font-bold text-white font-['Outfit'] flex items-center gap-3">
+          <span class="text-sky-400 font-mono text-base">04.</span> Data Security & Storage
+        </h2>
+        <p>
+          We implement rigorous technical and organizational measures to safeguard your information against unauthorized access, loss, or misuse:
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+          <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800">
+            <h4 class="font-semibold text-white text-sm mb-1"><i class="fa-solid fa-lock text-sky-400 mr-1.5"></i> TLS Encryption</h4>
+            <p class="text-xs text-slate-400">All data transmitted between your browser and our servers is encrypted using modern HTTPS (TLS 1.3).</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800">
+            <h4 class="font-semibold text-white text-sm mb-1"><i class="fa-solid fa-database text-indigo-400 mr-1.5"></i> Secure Database</h4>
+            <p class="text-xs text-slate-400">Form entries are stored in parameterized MySQL databases with strict firewall and access rules.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Cookies -->
+      <div class="space-y-4 pt-6 border-t border-slate-800/80">
+        <h2 class="text-xl sm:text-2xl font-bold text-white font-['Outfit'] flex items-center gap-3">
+          <span class="text-sky-400 font-mono text-base">05.</span> Cookies & Analytics
+        </h2>
+        <p>
+          Our website uses standard essential cookies to optimize session performance, maintain security tokens, and provide responsive interactive UI rendering. You can configure your browser to reject cookies, though some website features may not function optimally.
+        </p>
+      </div>
+
+      <!-- 6. Third-Party Integrations -->
+      <div class="space-y-4 pt-6 border-t border-slate-800/80">
+        <h2 class="text-xl sm:text-2xl font-bold text-white font-['Outfit'] flex items-center gap-3">
+          <span class="text-sky-400 font-mono text-base">06.</span> Third-Party Service Providers
+        </h2>
+        <p>
+          We may partner with verified third-party cloud infrastructure providers (such as AWS, Cloudflare, or email delivery relays) strictly to execute our operations. We never sell, rent, or trade your personal data with advertisers or third-party brokers.
+        </p>
+      </div>
+
+      <!-- 7. Your Privacy Rights -->
+      <div class="space-y-4 pt-6 border-t border-slate-800/80">
+        <h2 class="text-xl sm:text-2xl font-bold text-white font-['Outfit'] flex items-center gap-3">
+          <span class="text-sky-400 font-mono text-base">07.</span> Your Privacy Rights
+        </h2>
+        <p>
+          Depending on your jurisdiction, you have the right to request access to the personal data we hold about you, request corrections to inaccurate records, or request complete erasure of your contact submission from our databases.
+        </p>
+      </div>
+
+      <!-- 8. Contact Us -->
+      <div class="space-y-4 pt-6 border-t border-slate-800/80">
+        <h2 class="text-xl sm:text-2xl font-bold text-white font-['Outfit'] flex items-center gap-3">
+          <span class="text-sky-400 font-mono text-base">08.</span> Contact & Data Controller
+        </h2>
+        <p>
+          If you have questions regarding this Privacy Policy or wish to exercise your data rights, please contact our privacy and compliance desk:
+        </p>
+        <div class="p-5 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-2 text-sm">
+          <div><strong class="text-white">Company:</strong> <%= company.name %></div>
+          <div><strong class="text-white">Domain:</strong> <%= company.domain %></div>
+          <div><strong class="text-white">Support Email:</strong> <a href="mailto:<%= company.email %>" class="text-sky-400 underline font-mono"><%= company.email %></a></div>
+          <div><strong class="text-white">Address:</strong> <%= company.address %></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>
