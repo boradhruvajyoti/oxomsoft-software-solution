@@ -1,431 +1,98 @@
 <%- include('../partials/header') %>
 
-<!-- Ambient Mouse Spotlight (Tracks globally) -->
-<div class="cursor-spotlight"></div>
-
-<!-- 1. CINEMATIC HERO SECTION WITH 3D WEBGL QUANTUM NEXUS -->
-<section class="relative min-h-[95vh] flex items-center justify-center overflow-hidden bg-[#06080e] bg-grid-pattern bg-radial-gradient">
+<!-- 1. HERO SECTION WITH 3D INTERACTIVE THREE.JS CANVAS -->
+<section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-grid-pattern bg-radial-gradient">
   
   <!-- Three.js Canvas Container -->
-  <div id="hero-canvas-container" class="opacity-90"></div>
+  <div id="hero-canvas-container" class="absolute inset-0 z-0 opacity-85"></div>
 
-  <!-- Cinematic Volumetric Aurora Beams -->
-  <div class="aurora-beam top-[-10%] left-[15%] w-[500px] h-[500px] bg-sky-500/15"></div>
-  <div class="aurora-beam top-[30%] right-[-5%] w-[600px] h-[600px] bg-indigo-600/15" style="animation-delay: -6s;"></div>
-  <div class="aurora-beam bottom-[-10%] left-[35%] w-[450px] h-[450px] bg-purple-600/15" style="animation-delay: -12s;"></div>
+  <!-- Ambient Light Orbs -->
+  <div class="absolute -top-40 left-1/4 w-96 h-96 bg-sky-500/20 rounded-full blur-[128px] pointer-events-none animate-glow-pulse"></div>
+  <div class="absolute top-1/3 -right-20 w-96 h-96 bg-indigo-500/20 rounded-full blur-[128px] pointer-events-none animate-glow-pulse" style="animation-delay: 2s;"></div>
 
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-28 relative z-10 text-center">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 relative z-10 text-center">
     
-    <!-- Top Telemetry Status Pill -->
-    <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-slate-900/80 border border-sky-500/30 backdrop-blur-xl mb-8 shadow-lg shadow-sky-500/10 reveal">
-      <span class="flex h-2.5 w-2.5 relative">
-        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-        <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+    <!-- Top Pill Badge -->
+    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900/80 border border-sky-500/30 backdrop-blur-md mb-8 reveal">
+      <span class="flex h-2 w-2 relative">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-2 w-2 bg-sky-500"></span>
       </span>
-      <span class="text-xs font-mono font-semibold tracking-wider text-slate-300">
-        <span class="text-sky-400">CLUSTER:</span> ACTIVE <span class="text-slate-600 mx-1">|</span> 
-        <span class="text-indigo-400">STATUS:</span> OPTIMAL <span class="text-slate-600 mx-1">|</span> 
-        <span class="text-teal-400">PING:</span> 18ms
+      <span class="text-xs font-semibold text-sky-300 font-mono tracking-wide">
+        ENGINEERING NEXT-GEN DIGITAL EXPERIENCES
       </span>
     </div>
 
-    <!-- Main Headline with Dynamic Typewriter -->
-    <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight font-['Outfit'] text-white max-w-5xl mx-auto leading-[1.12] mb-6 reveal">
-      Architecting <br class="hidden sm:block" />
-      <span id="hero-typewriter" class="text-gradient typing-cursor">High-Performance Web Platforms</span>
+    <!-- Main Headline -->
+    <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight font-['Outfit'] text-white max-w-5xl mx-auto leading-[1.1] mb-6 reveal">
+      Architecting <span class="text-gradient">Modern Web, SaaS</span> & <span class="text-gradient">Mobile Solutions</span>
     </h1>
 
     <!-- Subtitle -->
-    <p class="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto font-normal leading-relaxed mb-10 text-shimmer reveal">
-      At <strong class="text-white">Oxomsoft Software Solution</strong>, we engineer blazing-fast web ecosystems, scalable multi-tenant SaaS products, and native iOS & Android applications crafted for visionary tech leaders.
+    <p class="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto font-normal leading-relaxed mb-10 reveal">
+      At <strong class="text-white">Oxomsoft Software Solution</strong>, we build ultra-fast websites, scalable cloud SaaS products, and intuitive native iOS & Android applications crafted for high-growth enterprises.
     </p>
 
-    <!-- Cinematic Action Buttons -->
+    <!-- CTAs -->
     <div class="flex flex-col sm:flex-row items-center justify-center gap-4 reveal">
-      <a href="/contact" class="btn-primary-glow w-full sm:w-auto px-9 py-4 rounded-xl text-base font-semibold text-white flex items-center justify-center gap-3 group">
-        <span>Schedule Free Technical Consultation</span>
-        <i class="fa-solid fa-arrow-right text-sm group-hover:translate-x-1.5 transition-transform"></i>
+      <a href="/contact" class="btn-primary-glow w-full sm:w-auto px-8 py-4 rounded-xl text-base font-semibold text-white shadow-xl shadow-sky-500/25 flex items-center justify-center gap-3">
+        <span>Schedule Free Consultation</span>
+        <i class="fa-solid fa-arrow-right text-sm"></i>
       </a>
-      <a href="#sandbox" class="btn-secondary-cyber w-full sm:w-auto px-8 py-4 rounded-xl text-base font-semibold text-slate-200 flex items-center justify-center gap-2.5">
-        <i class="fa-solid fa-terminal text-sky-400 text-sm"></i>
-        <span>Explore Architecture Sandbox</span>
+      <a href="#services" class="w-full sm:w-auto px-8 py-4 rounded-xl text-base font-semibold text-slate-200 bg-slate-900/80 hover:bg-slate-800/90 border border-slate-700/80 hover:border-sky-500/40 backdrop-blur-md transition-all duration-300 flex items-center justify-center gap-2">
+        <i class="fa-solid fa-layer-group text-sky-400 text-sm"></i>
+        <span>Explore Our Services</span>
       </a>
     </div>
 
-    <!-- Floating Live Telemetry Micro-Badges -->
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 max-w-4xl mx-auto reveal">
-      <div class="telemetry-chip p-3.5 rounded-xl text-left flex items-center gap-3">
-        <div class="w-9 h-9 rounded-lg bg-sky-500/10 border border-sky-500/30 flex items-center justify-center text-sky-400 shrink-0">
-          <i class="fa-solid fa-bolt-lightning text-sm"></i>
-        </div>
-        <div>
-          <div class="text-xs font-bold text-white font-mono">&lt; 100ms</div>
-          <div class="text-[10px] text-slate-400">Sub-second API Latency</div>
-        </div>
-      </div>
-
-      <div class="telemetry-chip p-3.5 rounded-xl text-left flex items-center gap-3">
-        <div class="w-9 h-9 rounded-lg bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400 shrink-0">
-          <i class="fa-solid fa-server text-sm"></i>
-        </div>
-        <div>
-          <div class="text-xs font-bold text-white font-mono">99.99%</div>
-          <div class="text-[10px] text-slate-400">Uptime SLA Reliability</div>
-        </div>
-      </div>
-
-      <div class="telemetry-chip p-3.5 rounded-xl text-left flex items-center gap-3">
-        <div class="w-9 h-9 rounded-lg bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 shrink-0">
-          <i class="fa-solid fa-shield-halved text-sm"></i>
-        </div>
-        <div>
-          <div class="text-xs font-bold text-white font-mono">Zero-Trust</div>
-          <div class="text-[10px] text-slate-400">Hardened Security Layer</div>
-        </div>
-      </div>
-
-      <div class="telemetry-chip p-3.5 rounded-xl text-left flex items-center gap-3">
-        <div class="w-9 h-9 rounded-lg bg-teal-500/10 border border-teal-500/30 flex items-center justify-center text-teal-400 shrink-0">
-          <i class="fa-solid fa-mobile-screen text-sm"></i>
-        </div>
-        <div>
-          <div class="text-xs font-bold text-white font-mono">60 FPS</div>
-          <div class="text-[10px] text-slate-400">Smooth Native UX</div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- 2. INFINITE DUAL-TRACK TECH MARQUEE RIBBON -->
-<section class="py-8 bg-[#05070c] border-y border-slate-800/80 overflow-hidden relative">
-  <div class="max-w-7xl mx-auto px-4 mb-4 text-center">
-    <span class="text-[11px] uppercase tracking-widest text-slate-400 font-mono font-semibold">
-      POWERING MISSION-CRITICAL SYSTEMS WITH ENTERPRISE TECHNOLOGIES
-    </span>
-  </div>
-
-  <!-- Track 1: Forward -->
-  <div class="marquee-container mb-3">
-    <div class="marquee-content">
-      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900/60 border border-slate-800 text-xs font-medium text-slate-300">
-        <i class="fa-brands fa-react text-sky-400 text-sm"></i> React 19 & Next.js 14
-      </div>
-      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900/60 border border-slate-800 text-xs font-medium text-slate-300">
-        <i class="fa-brands fa-node-js text-emerald-400 text-sm"></i> Node.js Cluster Core
-      </div>
-      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900/60 border border-slate-800 text-xs font-medium text-slate-300">
-        <i class="fa-brands fa-flutter text-indigo-400 text-sm"></i> Flutter & React Native
-      </div>
-      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900/60 border border-slate-800 text-xs font-medium text-slate-300">
-        <i class="fa-brands fa-aws text-amber-400 text-sm"></i> AWS Cloud & Global VPS
-      </div>
-      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900/60 border border-slate-800 text-xs font-medium text-slate-300">
-        <i class="fa-brands fa-docker text-blue-400 text-sm"></i> Docker & Microservices
-      </div>
-      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900/60 border border-slate-800 text-xs font-medium text-slate-300">
-        <i class="fa-solid fa-cubes text-purple-400 text-sm"></i> Three.js 3D WebGL
-      </div>
-      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900/60 border border-slate-800 text-xs font-medium text-slate-300">
-        <i class="fa-solid fa-database text-teal-400 text-sm"></i> MySQL & PostgreSQL
-      </div>
-      <!-- Duplicate for seamless looping -->
-      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900/60 border border-slate-800 text-xs font-medium text-slate-300">
-        <i class="fa-brands fa-react text-sky-400 text-sm"></i> React 19 & Next.js 14
-      </div>
-      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900/60 border border-slate-800 text-xs font-medium text-slate-300">
-        <i class="fa-brands fa-node-js text-emerald-400 text-sm"></i> Node.js Cluster Core
-      </div>
-      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900/60 border border-slate-800 text-xs font-medium text-slate-300">
-        <i class="fa-brands fa-flutter text-indigo-400 text-sm"></i> Flutter & React Native
-      </div>
-      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900/60 border border-slate-800 text-xs font-medium text-slate-300">
-        <i class="fa-brands fa-aws text-amber-400 text-sm"></i> AWS Cloud & Global VPS
-      </div>
-    </div>
-  </div>
-
-  <!-- Track 2: Reverse -->
-  <div class="marquee-container">
-    <div class="marquee-content-reverse">
-      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900/60 border border-slate-800 text-xs font-medium text-slate-300">
-        <i class="fa-solid fa-shield-virus text-rose-400 text-sm"></i> Automated SSL & Caddy TLS
-      </div>
-      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900/60 border border-slate-800 text-xs font-medium text-slate-300">
-        <i class="fa-solid fa-memory text-red-400 text-sm"></i> Redis In-Memory Caching
-      </div>
-      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900/60 border border-slate-800 text-xs font-medium text-slate-300">
-        <i class="fa-brands fa-stripe text-indigo-400 text-sm"></i> Stripe & Recurring Billing
-      </div>
-      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900/60 border border-slate-800 text-xs font-medium text-slate-300">
-        <i class="fa-solid fa-code text-sky-400 text-sm"></i> TypeScript & Strict Linting
-      </div>
-      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900/60 border border-slate-800 text-xs font-medium text-slate-300">
-        <i class="fa-brands fa-github text-slate-300 text-sm"></i> Automated CI/CD Pipelines
-      </div>
-      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900/60 border border-slate-800 text-xs font-medium text-slate-300">
-        <i class="fa-solid fa-network-wired text-emerald-400 text-sm"></i> RESTful & GraphQL Microservices
-      </div>
-      <!-- Duplicate for seamless looping -->
-      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900/60 border border-slate-800 text-xs font-medium text-slate-300">
-        <i class="fa-solid fa-shield-virus text-rose-400 text-sm"></i> Automated SSL & Caddy TLS
-      </div>
-      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900/60 border border-slate-800 text-xs font-medium text-slate-300">
-        <i class="fa-solid fa-memory text-red-400 text-sm"></i> Redis In-Memory Caching
-      </div>
-      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900/60 border border-slate-800 text-xs font-medium text-slate-300">
-        <i class="fa-brands fa-stripe text-indigo-400 text-sm"></i> Stripe & Recurring Billing
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 3. INTERACTIVE CINEMATIC ARCHITECTURE SANDBOX -->
-<section id="sandbox" class="py-24 bg-[#07090e] relative overflow-hidden">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    
-    <div class="text-center max-w-3xl mx-auto mb-14 reveal">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/30 text-xs font-mono text-sky-400 mb-4">
-        <i class="fa-solid fa-sliders text-xs"></i> LIVE SYSTEM ARCHITECTURE CONSOLE
-      </div>
-      <h2 class="text-3xl sm:text-5xl font-bold font-['Outfit'] text-white tracking-tight mb-4">
-        Interactive Engineering Sandbox
-      </h2>
-      <p class="text-slate-400 text-base sm:text-lg">
-        Explore how Oxomsoft designs and provisions production infrastructure across web, cloud SaaS, and mobile platforms.
+    <!-- Trust Tech Badges -->
+    <div class="mt-16 pt-10 border-t border-slate-800/60 max-w-4xl mx-auto reveal">
+      <p class="text-xs uppercase tracking-widest text-slate-400 font-mono mb-6">
+        BUILT WITH CUTTING-EDGE TECHNOLOGIES
       </p>
-    </div>
-
-    <!-- Sandbox Switcher Tabs -->
-    <div class="flex flex-wrap items-center justify-center gap-3 mb-10 reveal">
-      <button type="button" class="sandbox-tab px-5 py-3 rounded-xl text-sm font-semibold font-mono border transition-all duration-300 bg-sky-500/20 border-sky-500/50 text-sky-300 shadow-lg shadow-sky-500/20 flex items-center gap-2" data-tab="web">
-        <i class="fa-solid fa-globe text-sky-400"></i>
-        <span>01. Web Architecture</span>
-      </button>
-
-      <button type="button" class="sandbox-tab px-5 py-3 rounded-xl text-sm font-semibold font-mono border transition-all duration-300 bg-slate-900/60 border-slate-800 text-slate-400 hover:border-slate-700 hover:text-white flex items-center gap-2" data-tab="saas">
-        <i class="fa-solid fa-cloud-bolt text-indigo-400"></i>
-        <span>02. SaaS Cloud Cluster</span>
-      </button>
-
-      <button type="button" class="sandbox-tab px-5 py-3 rounded-xl text-sm font-semibold font-mono border transition-all duration-300 bg-slate-900/60 border-slate-800 text-slate-400 hover:border-slate-700 hover:text-white flex items-center gap-2" data-tab="mobile">
-        <i class="fa-solid fa-mobile-screen-button text-purple-400"></i>
-        <span>03. Mobile Ecosystem</span>
-      </button>
-
-      <button type="button" class="sandbox-tab px-5 py-3 rounded-xl text-sm font-semibold font-mono border transition-all duration-300 bg-slate-900/60 border-slate-800 text-slate-400 hover:border-slate-700 hover:text-white flex items-center gap-2" data-tab="devops">
-        <i class="fa-solid fa-server text-teal-400"></i>
-        <span>04. Zero-Trust DevOps</span>
-      </button>
-    </div>
-
-    <!-- Sandbox Interactive Panels -->
-    <div class="code-window rounded-2xl p-6 sm:p-8 relative reveal shadow-2xl">
-      
-      <!-- Window Titlebar -->
-      <div class="flex items-center justify-between border-b border-slate-800/90 pb-4 mb-6">
-        <div class="flex items-center gap-2">
-          <div class="w-3 h-3 rounded-full bg-rose-500"></div>
-          <div class="w-3 h-3 rounded-full bg-amber-500"></div>
-          <div class="w-3 h-3 rounded-full bg-emerald-500"></div>
-          <span class="text-xs font-mono text-slate-400 ml-2">oxomsoft-production-telemetry.ts</span>
+      <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-slate-400 text-sm font-medium">
+        <div class="flex items-center gap-2 hover:text-sky-400 transition-colors">
+          <i class="fa-brands fa-react text-sky-400 text-lg"></i> React / Next.js
         </div>
-        <div class="flex items-center gap-2">
-          <span class="flex h-2 w-2 relative">
-            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-          </span>
-          <span class="text-[11px] font-mono text-emerald-400 bg-emerald-500/10 px-2.5 py-0.5 rounded-full border border-emerald-500/20">LIVE ENGINE READY</span>
+        <div class="flex items-center gap-2 hover:text-emerald-400 transition-colors">
+          <i class="fa-brands fa-node-js text-emerald-400 text-lg"></i> Node.js & Express
+        </div>
+        <div class="flex items-center gap-2 hover:text-indigo-400 transition-colors">
+          <i class="fa-brands fa-flutter text-indigo-400 text-lg"></i> Flutter / React Native
+        </div>
+        <div class="flex items-center gap-2 hover:text-amber-400 transition-colors">
+          <i class="fa-solid fa-database text-amber-400 text-lg"></i> MySQL & Cloud DBs
+        </div>
+        <div class="flex items-center gap-2 hover:text-rose-400 transition-colors">
+          <i class="fa-brands fa-aws text-rose-400 text-lg"></i> AWS & Cloud VPS
         </div>
       </div>
-
-      <!-- Panel 1: Web Architecture -->
-      <div id="sandbox-web" class="sandbox-panel grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-        <div class="lg:col-span-6 space-y-4">
-          <div class="text-xs font-mono text-sky-400 font-semibold uppercase">NEXT-GEN WEB ECOSYSTEM</div>
-          <h3 class="text-2xl sm:text-3xl font-bold text-white font-['Outfit']">Sub-Second Modern Web Platforms</h3>
-          <p class="text-slate-300 text-sm leading-relaxed">
-            Engineered with React / Next.js server components, automatic WebP/AVIF asset optimization, and Caddy HTTP/3 reverse proxying to ensure 98+ Google Lighthouse scores and rapid customer conversion.
-          </p>
-          <div class="grid grid-cols-2 gap-3 pt-2">
-            <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-800">
-              <div class="text-lg font-bold font-mono text-sky-400">&lt; 0.4s</div>
-              <div class="text-[11px] text-slate-400">First Contentful Paint</div>
-            </div>
-            <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-800">
-              <div class="text-lg font-bold font-mono text-emerald-400">99 / 100</div>
-              <div class="text-[11px] text-slate-400">Core Web Vitals Score</div>
-            </div>
-          </div>
-          <div class="pt-2">
-            <a href="/contact?service=Website+Development" class="inline-flex items-center gap-2 text-xs font-semibold text-sky-400 hover:text-sky-300 transition-colors">
-              <span>Request Web Architecture Proposal</span>
-              <i class="fa-solid fa-arrow-right text-[10px]"></i>
-            </a>
-          </div>
-        </div>
-
-        <div class="lg:col-span-6">
-          <pre class="text-xs font-mono text-slate-300 bg-slate-950/90 p-5 rounded-xl border border-slate-800 overflow-x-auto leading-relaxed"><code><span class="text-purple-400">export const</span> <span class="text-sky-300">webConfig</span> = {
-  framework: <span class="text-emerald-300">'Next.js 14 / Express'</span>,
-  httpProtocol: <span class="text-emerald-300">'HTTP/3 via Caddy TLS'</span>,
-  caching: {
-    edgeCDN: <span class="text-amber-300">true</span>,
-    staleWhileRevalidate: <span class="text-amber-300">3600</span>,
-  },
-  seoOptimization: {
-    openGraph: <span class="text-amber-300">true</span>,
-    schemaMarkup: <span class="text-emerald-300">'JSON-LD Structured'</span>,
-    coreWebVitalsTarget: <span class="text-amber-300">99</span>,
-  }
-};</code></pre>
-        </div>
-      </div>
-
-      <!-- Panel 2: SaaS Cloud Cluster -->
-      <div id="sandbox-saas" class="sandbox-panel hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-        <div class="lg:col-span-6 space-y-4">
-          <div class="text-xs font-mono text-indigo-400 font-semibold uppercase">CLOUD NATIVE SAAS CORE</div>
-          <h3 class="text-2xl sm:text-3xl font-bold text-white font-['Outfit']">Multi-Tenant Cloud SaaS Engine</h3>
-          <p class="text-slate-300 text-sm leading-relaxed">
-            Multi-core Node.js cluster execution with Redis queue caching, automated Stripe subscription billing webhooks, isolated tenant databases, and end-to-end telemetry.
-          </p>
-          <div class="grid grid-cols-2 gap-3 pt-2">
-            <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-800">
-              <div class="text-lg font-bold font-mono text-indigo-400">10k+ Req/s</div>
-              <div class="text-[11px] text-slate-400">Throughput Capacity</div>
-            </div>
-            <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-800">
-              <div class="text-lg font-bold font-mono text-purple-400">Stripe Sync</div>
-              <div class="text-[11px] text-slate-400">Automated Billing Hooks</div>
-            </div>
-          </div>
-          <div class="pt-2">
-            <a href="/contact?service=SaaS+Development" class="inline-flex items-center gap-2 text-xs font-semibold text-indigo-400 hover:text-indigo-300 transition-colors">
-              <span>Schedule SaaS Blueprint Call</span>
-              <i class="fa-solid fa-arrow-right text-[10px]"></i>
-            </a>
-          </div>
-        </div>
-
-        <div class="lg:col-span-6">
-          <pre class="text-xs font-mono text-slate-300 bg-slate-950/90 p-5 rounded-xl border border-slate-800 overflow-x-auto leading-relaxed"><code><span class="text-purple-400">const</span> cluster = <span class="text-sky-300">require</span>(<span class="text-emerald-300">'cluster'</span>);
-<span class="text-purple-400">const</span> redis = <span class="text-sky-300">require</span>(<span class="text-emerald-300">'ioredis'</span>);
-
-<span class="text-purple-400">if</span> (cluster.isPrimary) {
-  <span class="text-slate-500">// Spawn workers across all CPU cores</span>
-  <span class="text-sky-300">spawnTenantClusterWorkers</span>({ tenantIsolation: <span class="text-amber-300">true</span> });
-} <span class="text-purple-400">else</span> {
-  <span class="text-sky-300">initSaaSServices</span>({ rateLimit: <span class="text-amber-300">500</span>, stripeWebhooks: <span class="text-amber-300">true</span> });
-}</code></pre>
-        </div>
-      </div>
-
-      <!-- Panel 3: Mobile Ecosystem -->
-      <div id="sandbox-mobile" class="sandbox-panel hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-        <div class="lg:col-span-6 space-y-4">
-          <div class="text-xs font-mono text-purple-400 font-semibold uppercase">CROSS-PLATFORM MOBILE</div>
-          <h3 class="text-2xl sm:text-3xl font-bold text-white font-['Outfit']">Flutter & Native iOS/Android</h3>
-          <p class="text-slate-300 text-sm leading-relaxed">
-            Single codebase with 60fps native performance, offline-first SQLite synchronization, push notifications, biometric FaceID/Fingerprint auth, and effortless App Store & Play Store approval.
-          </p>
-          <div class="grid grid-cols-2 gap-3 pt-2">
-            <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-800">
-              <div class="text-lg font-bold font-mono text-purple-400">60 FPS</div>
-              <div class="text-[11px] text-slate-400">Hardware Accelerated</div>
-            </div>
-            <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-800">
-              <div class="text-lg font-bold font-mono text-teal-400">Offline-1st</div>
-              <div class="text-[11px] text-slate-400">Realtime SQLite Sync</div>
-            </div>
-          </div>
-          <div class="pt-2">
-            <a href="/contact?service=Mobile+App+Development" class="inline-flex items-center gap-2 text-xs font-semibold text-purple-400 hover:text-purple-300 transition-colors">
-              <span>Discuss Mobile App Specs</span>
-              <i class="fa-solid fa-arrow-right text-[10px]"></i>
-            </a>
-          </div>
-        </div>
-
-        <div class="lg:col-span-6">
-          <pre class="text-xs font-mono text-slate-300 bg-slate-950/90 p-5 rounded-xl border border-slate-800 overflow-x-auto leading-relaxed"><code><span class="text-purple-400">class</span> <span class="text-sky-300">OxomsoftAppEngine</span> <span class="text-purple-400">extends</span> <span class="text-sky-300">StatelessWidget</span> {
-  <span class="text-slate-500">@override</span>
-  <span class="text-sky-300">Widget</span> <span class="text-sky-300">build</span>(<span class="text-sky-300">BuildContext</span> context) {
-    <span class="text-purple-400">return</span> <span class="text-sky-300">MaterialApp</span>(
-      theme: <span class="text-sky-300">OxomsoftDarkTheme</span>.cinematic,
-      home: <span class="text-sky-300">BiometricAuthSync</span>(offlineStorage: <span class="text-amber-300">true</span>),
-    );
-  }
-}</code></pre>
-        </div>
-      </div>
-
-      <!-- Panel 4: Zero-Trust DevOps -->
-      <div id="sandbox-devops" class="sandbox-panel hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-        <div class="lg:col-span-6 space-y-4">
-          <div class="text-xs font-mono text-teal-400 font-semibold uppercase">PRODUCTION CLOUD OPS</div>
-          <h3 class="text-2xl sm:text-3xl font-bold text-white font-['Outfit']">Zero-Downtime CI/CD & Security</h3>
-          <p class="text-slate-300 text-sm leading-relaxed">
-            Automated Git push webhooks, rolling PM2 cluster reloads, automatic Caddy Let's Encrypt certificates, and real-time DDOS rate limiting out of the box.
-          </p>
-          <div class="grid grid-cols-2 gap-3 pt-2">
-            <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-800">
-              <div class="text-lg font-bold font-mono text-teal-400">0s</div>
-              <div class="text-[11px] text-slate-400">Zero Downtime Deploys</div>
-            </div>
-            <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-800">
-              <div class="text-lg font-bold font-mono text-rose-400">Auto TLS</div>
-              <div class="text-[11px] text-slate-400">A+ SSL Rating</div>
-            </div>
-          </div>
-          <div class="pt-2">
-            <a href="/contact?service=Custom+Software" class="inline-flex items-center gap-2 text-xs font-semibold text-teal-400 hover:text-teal-300 transition-colors">
-              <span>Inquire Cloud DevOps Pipeline</span>
-              <i class="fa-solid fa-arrow-right text-[10px]"></i>
-            </a>
-          </div>
-        </div>
-
-        <div class="lg:col-span-6">
-          <pre class="text-xs font-mono text-slate-300 bg-slate-950/90 p-5 rounded-xl border border-slate-800 overflow-x-auto leading-relaxed"><code><span class="text-slate-500"># Caddyfile Reverse Proxy Production</span>
-oxomsoft.in {
-  encode zstd gzip
-  reverse_proxy localhost:3000 {
-    health_uri /api/health
-    health_interval 10s
-  }
-  tls admin@oxomsoft.in
-}</code></pre>
-        </div>
-      </div>
-
     </div>
 
   </div>
 </section>
 
-<!-- 4. CORE SPECIALIZED SERVICES (3D Tilt Cards) -->
-<section id="services" class="py-24 relative bg-[#06080e] border-t border-slate-800/80">
+<!-- 2. SERVICES SECTION -->
+<section id="services" class="py-24 relative bg-[#07090e] border-t border-slate-800/80">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     
     <div class="text-center max-w-3xl mx-auto mb-16 reveal">
       <div class="text-xs uppercase font-mono tracking-widest text-sky-400 font-semibold mb-3">
-        SPECIALIZED DOMAINS
+        CORE CAPABILITIES
       </div>
       <h2 class="text-3xl sm:text-5xl font-bold font-['Outfit'] text-white tracking-tight mb-4">
-        Tailored Digital Solutions
+        Specialized Software Services
       </h2>
       <p class="text-slate-400 text-base sm:text-lg">
-        We architect and ship mission-critical software built for durability, speed, and continuous business growth.
+        We specialize in three core engineering domains to transform ambitious ideas into robust, secure, and revenue-generating digital products.
       </p>
     </div>
 
-    <!-- 3 Core Service Cards with 3D Tilt -->
+    <!-- 3 Core Service Cards -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
       
       <!-- Card 1: Website Development -->
-      <div class="glass-card tilt-card rounded-2xl p-8 relative overflow-hidden flex flex-col justify-between group reveal">
+      <div class="glass-card rounded-2xl p-8 relative overflow-hidden flex flex-col justify-between group reveal">
         <div class="service-card-line"></div>
         <div>
           <div class="w-14 h-14 rounded-xl bg-sky-500/10 border border-sky-500/30 flex items-center justify-center text-sky-400 text-2xl mb-6 group-hover:scale-110 group-hover:bg-sky-500/20 transition-all duration-300">
@@ -452,14 +119,14 @@ oxomsoft.in {
             </li>
           </ul>
         </div>
-        <a href="/contact?service=Website+Development" class="inline-flex items-center gap-2 text-sm font-semibold text-sky-400 group-hover:text-sky-300 group-hover:translate-x-1.5 transition-all">
+        <a href="/contact?service=Website+Development" class="inline-flex items-center gap-2 text-sm font-semibold text-sky-400 group-hover:text-sky-300 group-hover:translate-x-1 transition-all">
           <span>Discuss Website Project</span>
           <i class="fa-solid fa-arrow-right text-xs"></i>
         </a>
       </div>
 
       <!-- Card 2: SaaS App Development -->
-      <div class="glass-card tilt-card rounded-2xl p-8 relative overflow-hidden flex flex-col justify-between group border-indigo-500/30 reveal" style="animation-delay: 0.1s;">
+      <div class="glass-card rounded-2xl p-8 relative overflow-hidden flex flex-col justify-between group border-indigo-500/30 reveal" style="animation-delay: 0.1s;">
         <div class="service-card-line"></div>
         <div class="absolute top-4 right-4 px-2.5 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-[10px] font-mono text-indigo-300 uppercase font-semibold">
           High Demand
@@ -489,14 +156,14 @@ oxomsoft.in {
             </li>
           </ul>
         </div>
-        <a href="/contact?service=SaaS+Development" class="inline-flex items-center gap-2 text-sm font-semibold text-indigo-400 group-hover:text-indigo-300 group-hover:translate-x-1.5 transition-all">
+        <a href="/contact?service=SaaS+Development" class="inline-flex items-center gap-2 text-sm font-semibold text-indigo-400 group-hover:text-indigo-300 group-hover:translate-x-1 transition-all">
           <span>Discuss SaaS Project</span>
           <i class="fa-solid fa-arrow-right text-xs"></i>
         </a>
       </div>
 
       <!-- Card 3: Mobile App Development -->
-      <div class="glass-card tilt-card rounded-2xl p-8 relative overflow-hidden flex flex-col justify-between group reveal" style="animation-delay: 0.2s;">
+      <div class="glass-card rounded-2xl p-8 relative overflow-hidden flex flex-col justify-between group reveal" style="animation-delay: 0.2s;">
         <div class="service-card-line"></div>
         <div>
           <div class="w-14 h-14 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 text-2xl mb-6 group-hover:scale-110 group-hover:bg-purple-500/20 transition-all duration-300">
@@ -523,7 +190,7 @@ oxomsoft.in {
             </li>
           </ul>
         </div>
-        <a href="/contact?service=Mobile+App+Development" class="inline-flex items-center gap-2 text-sm font-semibold text-purple-400 group-hover:text-purple-300 group-hover:translate-x-1.5 transition-all">
+        <a href="/contact?service=Mobile+App+Development" class="inline-flex items-center gap-2 text-sm font-semibold text-purple-400 group-hover:text-purple-300 group-hover:translate-x-1 transition-all">
           <span>Discuss Mobile Project</span>
           <i class="fa-solid fa-arrow-right text-xs"></i>
         </a>
@@ -534,81 +201,8 @@ oxomsoft.in {
   </div>
 </section>
 
-<!-- 5. INTERACTIVE PROJECT SCOPE & TIMELINE ESTIMATOR -->
-<section class="py-20 bg-[#090d16] relative border-t border-slate-800/80">
-  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    
-    <div class="glass-card rounded-3xl p-8 sm:p-12 border-sky-500/30 relative overflow-hidden reveal">
-      
-      <div class="text-center max-w-2xl mx-auto mb-10">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/30 text-xs font-mono text-sky-400 mb-3">
-          <i class="fa-solid fa-calculator text-xs"></i> INSTANT SCOPE CALCULATOR
-        </div>
-        <h3 class="text-2xl sm:text-4xl font-bold text-white font-['Outfit']">Estimate Your Project Timeline</h3>
-        <p class="text-slate-400 text-sm mt-2">
-          Select your requirements below for an instant architecture and delivery estimation.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-        
-        <!-- Field 1: Project Type -->
-        <div>
-          <label class="block text-xs font-mono text-slate-300 uppercase tracking-wider mb-2 font-semibold">1. Project Domain</label>
-          <select id="calc-type" class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-700 text-sm text-white focus:outline-none focus:border-sky-500 transition-colors">
-            <option value="web">Website & Web Portal</option>
-            <option value="saas">SaaS Cloud Application</option>
-            <option value="mobile">Native Mobile App (iOS/Android)</option>
-            <option value="custom">Custom Enterprise Fleet</option>
-          </select>
-        </div>
-
-        <!-- Field 2: Scale -->
-        <div>
-          <label class="block text-xs font-mono text-slate-300 uppercase tracking-wider mb-2 font-semibold">2. Project Scale</label>
-          <select id="calc-scale" class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-700 text-sm text-white focus:outline-none focus:border-sky-500 transition-colors">
-            <option value="mvp">MVP / Fast Launch</option>
-            <option value="growth" selected>Growth / Full Feature Set</option>
-            <option value="enterprise">Enterprise Scaled Cluster</option>
-          </select>
-        </div>
-
-        <!-- Field 3: Delivery Speed -->
-        <div>
-          <label class="block text-xs font-mono text-slate-300 uppercase tracking-wider mb-2 font-semibold">3. Velocity</label>
-          <select id="calc-speed" class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-700 text-sm text-white focus:outline-none focus:border-sky-500 transition-colors">
-            <option value="standard" selected>Standard Agile Sprints</option>
-            <option value="rush">Accelerated Fast-Track</option>
-          </select>
-        </div>
-
-      </div>
-
-      <!-- Result Banner -->
-      <div class="p-6 rounded-2xl bg-slate-950/80 border border-sky-500/20 flex flex-col sm:flex-row items-center justify-between gap-6">
-        <div class="space-y-1 text-center sm:text-left">
-          <div class="text-xs font-mono text-slate-400 uppercase">Estimated Milestone Delivery</div>
-          <div id="calc-timeline" class="text-2xl sm:text-3xl font-extrabold text-white font-['Outfit'] text-gradient">
-            6 - 8 Weeks
-          </div>
-          <div class="text-xs text-slate-400">
-            <span class="text-slate-500 font-mono">Recommended Stack:</span> <span id="calc-stack" class="text-sky-300 font-medium">Next.js 14, TypeScript, TailwindCSS, Node.js Cluster</span>
-          </div>
-        </div>
-
-        <a id="calc-cta" href="/contact?service=Website+Development&scale=growth" class="btn-primary-glow px-8 py-3.5 rounded-xl text-sm font-semibold text-white shrink-0 flex items-center gap-2">
-          <span>Lock In This Timeline</span>
-          <i class="fa-solid fa-arrow-right text-xs"></i>
-        </a>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-<!-- 6. THE OXOMSOFT ADVANTAGE & ARCHITECTURE METRICS -->
-<section class="py-24 bg-[#06080e] relative overflow-hidden border-t border-slate-800/80">
+<!-- 3. WHY CHOOSE US & METRICS -->
+<section class="py-24 bg-[#0a0e17] relative overflow-hidden border-t border-slate-800/80">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -619,10 +213,10 @@ oxomsoft.in {
           THE OXOMSOFT ADVANTAGE
         </div>
         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold font-['Outfit'] text-white tracking-tight leading-tight">
-          Engineered for <span class="text-gradient">Maximum ROI & Scale</span>
+          Why Tech Leaders Trust <span class="text-gradient">Oxomsoft</span>
         </h2>
         <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
-          We do not just write code; we build high-availability digital assets that eliminate technical debt, enhance customer retention, and give your company a decisive technical advantage.
+          We do not just write lines of code; we engineer scalable digital assets designed to withstand high production loads, reduce technical debt, and maximize your business ROI.
         </p>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4">
@@ -632,8 +226,8 @@ oxomsoft.in {
               <i class="fa-solid fa-bolt text-lg"></i>
             </div>
             <div>
-              <h4 class="text-base font-semibold text-white">Cluster Performance</h4>
-              <p class="text-xs text-slate-400 mt-1">Multi-core Node.js execution with sub-second API responses.</p>
+              <h4 class="text-base font-semibold text-white">High Performance</h4>
+              <p class="text-xs text-slate-400 mt-1">Sub-second load times & cluster-optimized architecture.</p>
             </div>
           </div>
 
@@ -643,7 +237,7 @@ oxomsoft.in {
             </div>
             <div>
               <h4 class="text-base font-semibold text-white">Enterprise Security</h4>
-              <p class="text-xs text-slate-400 mt-1">Automated TLS proxying, helmet protection, and zero vulnerabilities.</p>
+              <p class="text-xs text-slate-400 mt-1">End-to-end encryption, rate limits, and zero vulnerability posture.</p>
             </div>
           </div>
 
@@ -652,8 +246,8 @@ oxomsoft.in {
               <i class="fa-solid fa-code-branch text-lg"></i>
             </div>
             <div>
-              <h4 class="text-base font-semibold text-white">100% Code Ownership</h4>
-              <p class="text-xs text-slate-400 mt-1">Clean Git repository with full IP rights and documentation.</p>
+              <h4 class="text-base font-semibold text-white">Clean & Documented</h4>
+              <p class="text-xs text-slate-400 mt-1">Modular codebase with test suites and documentation.</p>
             </div>
           </div>
 
@@ -663,7 +257,7 @@ oxomsoft.in {
             </div>
             <div>
               <h4 class="text-base font-semibold text-white">Dedicated Support</h4>
-              <p class="text-xs text-slate-400 mt-1">Direct senior engineer access via support@oxomsoft.com.</p>
+              <p class="text-xs text-slate-400 mt-1">Direct developer access via support@oxomsoft.com.</p>
             </div>
           </div>
 
@@ -678,9 +272,9 @@ oxomsoft.in {
             <div class="w-3 h-3 rounded-full bg-rose-500"></div>
             <div class="w-3 h-3 rounded-full bg-amber-500"></div>
             <div class="w-3 h-3 rounded-full bg-emerald-500"></div>
-            <span class="text-xs font-mono text-slate-400 ml-2">oxomsoft-cluster.config.js</span>
+            <span class="text-xs font-mono text-slate-400 ml-2">oxomsoft-architecture.config.js</span>
           </div>
-          <span class="text-[11px] font-mono text-sky-400 bg-sky-500/10 px-2 py-0.5 rounded">High Concurrency</span>
+          <span class="text-[11px] font-mono text-sky-400 bg-sky-500/10 px-2 py-0.5 rounded">Node Cluster Mode</span>
         </div>
 
         <pre class="text-xs font-mono text-slate-300 overflow-x-auto p-4 bg-slate-950/80 rounded-xl border border-slate-800/80 mb-6"><code><span class="text-purple-400">const</span> cluster = <span class="text-sky-300">require</span>(<span class="text-emerald-300">'cluster'</span>);
@@ -716,26 +310,26 @@ oxomsoft.in {
   </div>
 </section>
 
-<!-- 7. 4-STEP ENGINEERING LIFECYCLE -->
+<!-- 4. DEVELOPMENT PROCESS -->
 <section id="process" class="py-24 bg-[#07090e] border-t border-slate-800/80">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     
     <div class="text-center max-w-3xl mx-auto mb-16 reveal">
       <div class="text-xs uppercase font-mono tracking-widest text-sky-400 font-semibold mb-3">
-        TRANSPARENT PROCESS
+        HOW WE WORK
       </div>
       <h2 class="text-3xl sm:text-5xl font-bold font-['Outfit'] text-white tracking-tight mb-4">
         Our 4-Step Engineering Lifecycle
       </h2>
       <p class="text-slate-400 text-base sm:text-lg">
-        From discovery to automated production deployment, our transparent sprints guarantee on-time and on-budget delivery.
+        From initial roadmap scoping to automated production deployment, our transparent process ensures on-time and on-budget delivery.
       </p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
       
       <!-- Step 1 -->
-      <div class="glass-card tilt-card rounded-2xl p-6 relative reveal">
+      <div class="glass-card rounded-2xl p-6 relative reveal">
         <div class="text-4xl font-extrabold font-mono text-slate-800 mb-4">01</div>
         <div class="w-10 h-10 rounded-lg bg-sky-500/10 border border-sky-500/30 flex items-center justify-center text-sky-400 mb-4">
           <i class="fa-solid fa-compass-drafting text-lg"></i>
@@ -747,7 +341,7 @@ oxomsoft.in {
       </div>
 
       <!-- Step 2 -->
-      <div class="glass-card tilt-card rounded-2xl p-6 relative reveal" style="animation-delay: 0.1s;">
+      <div class="glass-card rounded-2xl p-6 relative reveal" style="animation-delay: 0.1s;">
         <div class="text-4xl font-extrabold font-mono text-slate-800 mb-4">02</div>
         <div class="w-10 h-10 rounded-lg bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400 mb-4">
           <i class="fa-solid fa-bezier-curve text-lg"></i>
@@ -759,7 +353,7 @@ oxomsoft.in {
       </div>
 
       <!-- Step 3 -->
-      <div class="glass-card tilt-card rounded-2xl p-6 relative reveal" style="animation-delay: 0.2s;">
+      <div class="glass-card rounded-2xl p-6 relative reveal" style="animation-delay: 0.2s;">
         <div class="text-4xl font-extrabold font-mono text-slate-800 mb-4">03</div>
         <div class="w-10 h-10 rounded-lg bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 mb-4">
           <i class="fa-solid fa-code text-lg"></i>
@@ -771,7 +365,7 @@ oxomsoft.in {
       </div>
 
       <!-- Step 4 -->
-      <div class="glass-card tilt-card rounded-2xl p-6 relative reveal" style="animation-delay: 0.3s;">
+      <div class="glass-card rounded-2xl p-6 relative reveal" style="animation-delay: 0.3s;">
         <div class="text-4xl font-extrabold font-mono text-slate-800 mb-4">04</div>
         <div class="w-10 h-10 rounded-lg bg-teal-500/10 border border-teal-500/30 flex items-center justify-center text-teal-400 mb-4">
           <i class="fa-solid fa-rocket text-lg"></i>
@@ -787,7 +381,7 @@ oxomsoft.in {
   </div>
 </section>
 
-<!-- 8. PROVEN EXCELLENCE & TESTIMONIALS -->
+<!-- 5. TESTIMONIALS / WHAT CLIENTS SAY -->
 <section class="py-24 bg-[#0a0e17] border-t border-slate-800/80 relative">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     
@@ -805,7 +399,7 @@ oxomsoft.in {
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
       
-      <div class="glass-card tilt-card rounded-2xl p-8 flex flex-col justify-between reveal">
+      <div class="glass-card rounded-2xl p-8 flex flex-col justify-between reveal">
         <div>
           <div class="flex text-amber-400 text-xs gap-1 mb-4">
             <i class="fa-solid fa-star"></i>
@@ -829,7 +423,7 @@ oxomsoft.in {
         </div>
       </div>
 
-      <div class="glass-card tilt-card rounded-2xl p-8 flex flex-col justify-between reveal" style="animation-delay: 0.1s;">
+      <div class="glass-card rounded-2xl p-8 flex flex-col justify-between reveal" style="animation-delay: 0.1s;">
         <div>
           <div class="flex text-amber-400 text-xs gap-1 mb-4">
             <i class="fa-solid fa-star"></i>
@@ -853,7 +447,7 @@ oxomsoft.in {
         </div>
       </div>
 
-      <div class="glass-card tilt-card rounded-2xl p-8 flex flex-col justify-between reveal" style="animation-delay: 0.2s;">
+      <div class="glass-card rounded-2xl p-8 flex flex-col justify-between reveal" style="animation-delay: 0.2s;">
         <div>
           <div class="flex text-amber-400 text-xs gap-1 mb-4">
             <i class="fa-solid fa-star"></i>
@@ -882,32 +476,29 @@ oxomsoft.in {
   </div>
 </section>
 
-<!-- 9. CINEMATIC HIGH-IMPACT QUANTUM CALL TO ACTION -->
-<section class="py-24 relative overflow-hidden bg-gradient-to-b from-[#0a0e17] via-[#07090e] to-[#04060a] border-t border-slate-800/80">
+<!-- 6. HIGH-IMPACT CALL TO ACTION -->
+<section class="py-20 relative overflow-hidden bg-gradient-to-b from-[#0a0e17] to-[#07090e] border-t border-slate-800/80">
   <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-    <div class="glass-card rounded-3xl p-10 sm:p-16 border-sky-500/30 bg-gradient-to-r from-sky-950/40 via-indigo-950/40 to-purple-950/40 relative overflow-hidden reveal shadow-2xl">
+    <div class="glass-card rounded-3xl p-10 sm:p-14 border-sky-500/30 bg-gradient-to-r from-sky-950/40 via-indigo-950/40 to-purple-950/40 relative overflow-hidden reveal">
       
-      <!-- Pulsing Glow Ring in Background -->
-      <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-96 h-96 bg-sky-500/20 rounded-full blur-[100px] pointer-events-none"></div>
-
       <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-500/10 border border-sky-500/30 text-xs font-mono text-sky-300 mb-6">
-        <i class="fa-solid fa-sparkles text-xs"></i> COMMENCE YOUR TRANSFORMATION
+        <i class="fa-solid fa-sparkles"></i> START YOUR DIGITAL TRANSFORMATION
       </div>
 
       <h2 class="text-3xl sm:text-5xl font-extrabold font-['Outfit'] text-white tracking-tight mb-4 leading-tight">
         Ready to Build Your Next <span class="text-gradient">Breakthrough Product?</span>
       </h2>
 
-      <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto mb-10 text-shimmer">
-        Partner with Oxomsoft Software Solution. Get an in-depth technical architectural blueprint and customized quotation within 24 hours.
+      <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto mb-8">
+        Partner with Oxomsoft Software Solution today. Get an in-depth technical consultation and customized quotation within 24 hours.
       </p>
 
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a href="/contact" class="btn-primary-glow w-full sm:w-auto px-10 py-4 rounded-xl text-base font-semibold text-white shadow-xl shadow-sky-500/30 flex items-center justify-center gap-3 group">
-          <span>Initiate Project Consultation</span>
-          <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
+        <a href="/contact" class="btn-primary-glow w-full sm:w-auto px-9 py-4 rounded-xl text-base font-semibold text-white shadow-xl shadow-sky-500/30 flex items-center justify-center gap-2">
+          <span>Get in Touch with Us</span>
+          <i class="fa-solid fa-arrow-right text-xs"></i>
         </a>
-        <a href="mailto:<%= company.email %>" class="btn-secondary-cyber w-full sm:w-auto px-8 py-4 rounded-xl text-base font-medium text-slate-300 flex items-center justify-center gap-2.5 font-mono">
+        <a href="mailto:<%= company.email %>" class="w-full sm:w-auto px-7 py-4 rounded-xl text-base font-medium text-slate-300 bg-slate-900/80 hover:bg-slate-800 border border-slate-700/80 transition-colors flex items-center justify-center gap-2 font-mono">
           <i class="fa-regular fa-envelope text-sky-400"></i>
           <span><%= company.email %></span>
         </a>
