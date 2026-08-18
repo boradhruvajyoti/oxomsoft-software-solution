@@ -1,0 +1,103 @@
+================================================================================
+OXOMSOFT SOFTWARE SOLUTION - UPDATE & DEPLOYMENT INSTRUCTIONS & SCRIPTS
+Repository: https://github.com/boradhruvajyoti/oxomsoft-software-solution
+================================================================================
+
+--------------------------------------------------------------------------------
+PART 1: LOCAL MACHINE -> PUSH UPDATES TO GITHUB
+--------------------------------------------------------------------------------
+Whenever you make changes or add new features on your computer, run these commands 
+in your terminal inside the project directory:
+
+# Step 1: Check what files were changed
+git status
+
+# Step 2: Stage all changes
+git add .
+
+# Step 3: Commit with a meaningful message
+git commit -m "Update website features and design"
+
+# Step 4: Push the updates to GitHub (main branch)
+git push origin main
+
+
+--------------------------------------------------------------------------------
+PART 2: PRODUCTION SERVER -> PULL UPDATES & ZERO-DOWNTIME RESTART
+--------------------------------------------------------------------------------
+SSH into your server:
+ssh -p 2613 itest@104.168.117.110
+
+Run the automated 1-line update command:
+cd /var/www/oxomsoft && git pull origin main && npm install --omit=dev && pm2 reload oxomsoft-app --update-env
+
+(Note: "pm2 reload" reloads cluster workers one by one with 0-second downtime for visitors)
+
+
+--------------------------------------------------------------------------------
+PART 3: AUTOMATED ONE-CLICK UPDATE SCRIPT FOR YOUR SERVER
+--------------------------------------------------------------------------------
+You can save an automated script on your server so you only need to run "./update.sh".
+
+To create this script on your server:
+
+1. SSH into the server:
+   ssh -p 2613 itest@104.168.117.110
+
+2. Navigate to project root:
+   cd /var/www/oxomsoft
+
+3. Create the update script file:
+   cat << 'EOF' > update.sh
+#!/bin/bash
+set -e
+
+echo "=========================================="
+echo "🚀 Updating Oxomsoft Software Solution..."
+echo "=========================================="
+
+# 1. Navigate to project root
+cd /var/www/oxomsoft
+
+# 2. Pull latest commits from GitHub
+echo "📥 Pulling latest updates from GitHub..."
+git pull origin main
+
+# 3. Install any new npm packages
+echo "📦 Installing npm dependencies..."
+npm install --omit=dev
+
+# 4. Zero-downtime reload with PM2
+echo "🔄 Reloading PM2 cluster..."
+pm2 reload oxomsoft-app --update-env
+
+# 5. Check health status
+echo "✅ Deployment successful!"
+pm2 status
+EOF
+
+4. Make the script executable:
+   chmod +x update.sh
+
+5. From now on, whenever you push updates to GitHub, just SSH into your server and run:
+   /var/www/oxomsoft/update.sh
+
+
+--------------------------------------------------------------------------------
+PART 4: USEFUL SERVER MAINTENANCE COMMANDS
+--------------------------------------------------------------------------------
+- View live logs:
+  pm2 logs oxomsoft-app
+
+- Monitor server CPU & RAM:
+  pm2 monit
+
+- Restart all workers manually:
+  pm2 restart oxomsoft-app
+
+- Check Caddy reverse proxy status:
+  sudo systemctl status caddy
+
+- Reload Caddy if you edit Caddyfile:
+  sudo systemctl reload caddy
+================================================================================
