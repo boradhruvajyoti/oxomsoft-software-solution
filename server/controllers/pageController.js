@@ -65,6 +65,19 @@ const PageController = {
   },
 
   /**
+   * Render Classic Puzzle Privacy Policy Page
+   */
+  getClassicPuzzlePrivacyPage(req, res) {
+    res.render('pages/classic-puzzle-privacy', {
+      title: 'Privacy Policy for Classic Puzzle | Oxomsoft Software Solution',
+      metaDescription: 'Official Privacy Policy for Classic Puzzle mobile game explaining data collection, Google AdMob advertising, local storage, and user privacy rights.',
+      canonicalUrl: `${companyInfo.url}/privacy-policy/classic-puzzle`,
+      currentPath: '/privacy-policy/classic-puzzle',
+      company: companyInfo,
+    });
+  },
+
+  /**
    * 404 Handler
    */
   getNotFoundPage(req, res) {
