@@ -58,7 +58,10 @@ Oxomosft Software Solution/
 │   │   ├── contact-form.js      # Client validation & async AJAX submission
 │   │   └── main.js              # Navbar scroll blur, mobile drawer, scroll reveal
 │   ├── assets/
-│   │   └── favicon.svg          # Stylized geometric Oxomsoft brand icon
+│   │   ├── logo.png             # Official Oxomsoft metallic emblem site logo
+│   │   ├── favicon.png          # High-resolution favicon & app icons
+│   │   └── favicon.svg          # Stylized geometric brand vector
+│   ├── favicon.ico              # Standard root favicon
 │   ├── robots.txt               # Search engine crawler instructions
 │   └── sitemap.xml              # SEO sitemap
 ├── Caddyfile                    # Production Caddy reverse proxy & TLS configuration
