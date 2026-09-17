@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /api/
 
-Sitemap: https://oxomsoft.in/sitemap.xml
+Sitemap: https://oxomsoft.com/sitemap.xml

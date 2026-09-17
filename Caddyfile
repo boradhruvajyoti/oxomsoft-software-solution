@@ -1,16 +1,16 @@
 # ==============================================================================
 # Caddyfile Configuration for Oxomsoft Software Solution
-# Domain: oxomsoft.in
+# Domain: oxomsoft.com
 # Automatic TLS / HTTPS by Let's Encrypt
 # ==============================================================================
 
 # Redirect www to apex domain
-www.oxomsoft.in {
-    redir https://oxomsoft.in{uri} permanent
+www.oxomsoft.com {
+    redir https://oxomsoft.com{uri} permanent
 }
 
 # Main Application Block
-oxomsoft.in {
+oxomsoft.com {
     # Automatic HTTPS with contact email for TLS expiry notifications
     tls support@oxomsoft.com
 

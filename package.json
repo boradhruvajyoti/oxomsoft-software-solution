@@ -1,7 +1,7 @@
 {
   "name": "oxomsoft-software-solution",
   "version": "1.0.0",
-  "description": "Official production website and backend for Oxomsoft Software Solution (oxomsoft.in)",
+  "description": "Official production website and backend for Oxomsoft Software Solution (oxomsoft.com)",
   "main": "server/cluster.js",
   "scripts": {
     "start": "node server/cluster.js",

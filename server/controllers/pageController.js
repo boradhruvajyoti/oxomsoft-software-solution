@@ -1,8 +1,8 @@
 const companyInfo = {
   name: 'Oxomsoft Software Solution',
   shortName: 'Oxomsoft',
-  domain: 'oxomsoft.in',
-  url: process.env.APP_URL || 'https://oxomsoft.in',
+  domain: process.env.APP_DOMAIN || 'oxomsoft.com',
+  url: process.env.APP_URL || 'https://oxomsoft.com',
   email: process.env.SUPPORT_EMAIL || 'support@oxomsoft.com',
   phone: '+91 98765 43210',
   address: 'Guwahati, Assam, India - 781001',
@@ -57,7 +57,7 @@ const PageController = {
   getPrivacyPolicyPage(req, res) {
     res.render('pages/privacy', {
       title: 'Privacy Policy | Oxomsoft Software Solution',
-      metaDescription: 'Privacy policy for Oxomsoft Software Solution (oxomsoft.in) explaining how we collect, store, and protect user data.',
+      metaDescription: 'Privacy policy for Oxomsoft Software Solution (oxomsoft.com) explaining how we collect, store, and protect user data.',
       canonicalUrl: `${companyInfo.url}/privacy-policy`,
       currentPath: '/privacy-policy',
       company: companyInfo,

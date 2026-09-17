@@ -15,7 +15,7 @@ if (isPrimary) {
   console.log(`🚀 Oxomsoft Software Solution Cluster Master`);
   console.log(`⚡ Master PID: ${process.pid}`);
   console.log(`💻 Detected ${numCPUs} CPU Core(s)`);
-  console.log(`🌐 Target Domain: ${process.env.APP_DOMAIN || 'oxomsoft.in'}`);
+  console.log(`🌐 Target Domain: ${process.env.APP_DOMAIN || 'oxomsoft.com'}`);
   console.log(`🔌 Listening Port: ${PORT}`);
   console.log('====================================================');
 

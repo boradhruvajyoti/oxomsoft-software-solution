@@ -23,7 +23,7 @@ async function sendNotificationEmail(messageData) {
   if (!transporter) return;
 
   const mailOptions = {
-    from: process.env.MAIL_FROM || 'Oxomsoft Website <no-reply@oxomsoft.in>',
+    from: process.env.MAIL_FROM || 'Oxomsoft Website <no-reply@oxomsoft.com>',
     to: process.env.SUPPORT_EMAIL || 'support@oxomsoft.com',
     replyTo: messageData.email,
     subject: `[New Inquiry] ${messageData.subject} - from ${messageData.name}`,
@@ -55,7 +55,7 @@ async function sendNotificationEmail(messageData) {
           <p style="margin: 0; color: #f8fafc; white-space: pre-wrap; line-height: 1.6;">${messageData.message}</p>
         </div>
         <p style="margin-top: 24px; font-size: 12px; color: #64748b;">
-          Received via oxomsoft.in at ${new Date().toUTCString()}
+          Received via oxomsoft.com at ${new Date().toUTCString()}
         </p>
       </div>
     `,
@@ -89,12 +89,12 @@ const ContactController = {
       return res.status(422).render('pages/contact', {
         title: 'Contact Us | Oxomsoft Software Solution',
         metaDescription: 'Get in touch with Oxomsoft for custom software development.',
-        canonicalUrl: `${process.env.APP_URL || 'https://oxomsoft.in'}/contact`,
+        canonicalUrl: `${process.env.APP_URL || 'https://oxomsoft.com'}/contact`,
         currentPath: '/contact',
         company: {
           name: 'Oxomsoft Software Solution',
           shortName: 'Oxomsoft',
-          domain: 'oxomsoft.in',
+          domain: process.env.APP_DOMAIN || 'oxomsoft.com',
           email: process.env.SUPPORT_EMAIL || 'support@oxomsoft.com',
           phone: '+91 98765 43210',
           address: 'Guwahati, Assam, India - 781001',
@@ -148,12 +148,12 @@ const ContactController = {
       return res.status(500).render('pages/contact', {
         title: 'Contact Us | Oxomsoft Software Solution',
         metaDescription: 'Get in touch with Oxomsoft.',
-        canonicalUrl: `${process.env.APP_URL || 'https://oxomsoft.in'}/contact`,
+        canonicalUrl: `${process.env.APP_URL || 'https://oxomsoft.com'}/contact`,
         currentPath: '/contact',
         company: {
           name: 'Oxomsoft Software Solution',
           shortName: 'Oxomsoft',
-          domain: 'oxomsoft.in',
+          domain: process.env.APP_DOMAIN || 'oxomsoft.com',
           email: process.env.SUPPORT_EMAIL || 'support@oxomsoft.com',
           phone: '+91 98765 43210',
           address: 'Guwahati, Assam, India - 781001',

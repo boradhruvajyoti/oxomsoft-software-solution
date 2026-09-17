@@ -1,19 +1,19 @@
 # Oxomsoft Software Solution — Production Web Platform
 
-[![Domain](https://img.shields.io/badge/Domain-oxomsoft.in-blue)](https://oxomsoft.in)
+[![Domain](https://img.shields.io/badge/Domain-oxomsoft.com-blue)](https://oxomsoft.com)
 [![Node](https://img.shields.io/badge/Node.js-%3E%3D18.0.0-green.svg)](https://nodejs.org)
 [![Express](https://img.shields.io/badge/Express-4.19.2-black.svg)](https://expressjs.com)
 [![MySQL](https://img.shields.io/badge/MySQL-8.0%2B-orange.svg)](https://www.mysql.com)
 [![Reverse Proxy](https://img.shields.io/badge/Reverse%20Proxy-Caddy%20v2-teal.svg)](https://caddyserver.com)
 [![License](https://img.shields.io/badge/License-Proprietary-red.svg)]()
 
-Official production website and backend for **Oxomsoft Software Solution** (`oxomsoft.in`), engineered with high-throughput Node.js clustering, MySQL connection pooling, Three.js 3D hero canvas, Tailwind CSS styling, EJS templating, security headers, rate limiting, and Caddy reverse proxy integration.
+Official production website and backend for **Oxomsoft Software Solution** (`oxomsoft.com`), engineered with high-throughput Node.js clustering, MySQL connection pooling, Three.js 3D hero canvas, Tailwind CSS styling, EJS templating, security headers, rate limiting, and Caddy reverse proxy integration.
 
 ---
 
 ## 🏢 Company Overview
 - **Company Name:** Oxomsoft Software Solution
-- **Domain:** [oxomsoft.in](https://oxomsoft.in)
+- **Domain:** [oxomsoft.com](https://oxomsoft.com)
 - **Support Email:** [support@oxomsoft.com](mailto:support@oxomsoft.com)
 - **Core Services:**
   1. Custom Website Development
@@ -48,7 +48,7 @@ Oxomosft Software Solution/
 │       ├── index.ejs            # Home with Three.js 3D Hero, services & process
 │       ├── about.ejs            # About page with mission, vision, core values & team
 │       ├── contact.ejs          # Contact form, direct support & interactive map
-│       ├── privacy.ejs          # Full Privacy Policy for oxomsoft.in
+│       ├── privacy.ejs          # Full Privacy Policy for oxomsoft.com
 │       └── 404.ejs              # Branded 404 error page
 ├── public/
 │   ├── css/
@@ -180,7 +180,7 @@ sudo caddy fmt --overwrite /etc/caddy/Caddyfile
 sudo systemctl reload caddy
 ```
 
-Your website will immediately be accessible with auto-renewing SSL at `https://oxomsoft.in`.
+Your website will immediately be accessible with auto-renewing SSL at `https://oxomsoft.com`.
 
 ---
 
@@ -197,7 +197,7 @@ Your website will immediately be accessible with auto-renewing SSL at `https://o
 
 ## 📧 Support & Contact
 
-- **Domain:** [oxomsoft.in](https://oxomsoft.in)
+- **Domain:** [oxomsoft.com](https://oxomsoft.com)
 - **Support Desk:** [support@oxomsoft.com](mailto:support@oxomsoft.com)
 - **Location:** Guwahati, Assam, India - 781001
 - **Copyright:** &copy; 2025 Oxomsoft Software Solution. All rights reserved.

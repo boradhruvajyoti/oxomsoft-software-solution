@@ -108,12 +108,12 @@ app.use((err, req, res, next) => {
   res.status(500).render('pages/404', {
     title: '500 - Server Error | Oxomsoft Software Solution',
     metaDescription: 'An unexpected internal error occurred.',
-    canonicalUrl: `${process.env.APP_URL || 'https://oxomsoft.in'}/500`,
+    canonicalUrl: `${process.env.APP_URL || 'https://oxomsoft.com'}/500`,
     currentPath: req.path,
     company: {
       name: 'Oxomsoft Software Solution',
       shortName: 'Oxomsoft',
-      domain: 'oxomsoft.in',
+      domain: process.env.APP_DOMAIN || 'oxomsoft.com',
       email: process.env.SUPPORT_EMAIL || 'support@oxomsoft.com',
       phone: '+91 98765 43210',
       address: 'Guwahati, Assam, India - 781001',
